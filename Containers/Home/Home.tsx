@@ -1,14 +1,13 @@
 import * as React from 'react';
 import * as Redux from 'react-redux';
-import {Text} from 'react-native';
 import {Container} from '../../Components';
 import {fetchVeichles} from '../../Stores/Veichles/actions';
 import {getVeichlesSelector} from '../../Stores/Veichles/selectors';
+import CarList from '../../Components/CarList/CarList';
 
 const Home = () => {
   const dispatch = Redux.useDispatch();
-  const vechs = Redux.useSelector(getVeichlesSelector);
-  console.log({vechs});
+  const veichles = Redux.useSelector(getVeichlesSelector);
 
   React.useEffect(() => {
     dispatch(fetchVeichles());
@@ -16,7 +15,7 @@ const Home = () => {
 
   return (
     <Container>
-      <Text>Home</Text>
+      <CarList veichles={veichles} />
     </Container>
   );
 };
