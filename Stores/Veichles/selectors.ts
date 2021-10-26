@@ -8,5 +8,5 @@ export const getVeichlesSelector = createSelector(
 
 export const getSelectedCar = (id: number) =>
   createSelector(getVeichlesSelector, (veichles: Veichle[]) => {
-    return veichles.filter(vechile => vechile.id === id) ?? veichles[0];
+    return veichles.find(vechile => vechile.id === id);
   });

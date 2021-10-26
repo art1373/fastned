@@ -1,7 +1,9 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, StyleSheet} from 'react-native';
 import Image from 'react-native-fast-image';
-import {Helpers, Colors, Fonts} from '../../Theme';
+import {Helpers} from '../../Theme';
+import CarCategory from '../CarCategory/CarCategory';
+import CarInfo from '../CarInfo/CarInfo';
 
 type Props = {
   category: string;
@@ -21,15 +23,9 @@ const CardCard = ({category, brand, model, image, onPress, version}: Props) => {
             source={{uri: image, priority: Image.priority.high}}
             resizeMode="contain"
           />
-          <View style={styles.infoWrap}>
-            <Text style={styles.brand}>{brand}</Text>
-            <Text style={styles.modelVer}>{model}</Text>
-            <Text style={styles.modelVer}>ver:{version}</Text>
-          </View>
+          <CarInfo brand={brand} model={model} version={version} />
         </View>
-        <View style={styles.categoryView}>
-          <Text style={styles.category}>{category}</Text>
-        </View>
+        <CarCategory category={category} />
       </View>
     </TouchableOpacity>
   );
@@ -50,28 +46,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
     borderRadius: 20,
     marginLeft: 10,
-  },
-  infoWrap: {
-    marginHorizontal: 20,
-  },
-  brand: {...Fonts.h4Bold},
-  modelVer: {...Fonts.input},
-  categoryView: {
-    position: 'absolute',
-    right: 10,
-    bottom: 10,
-    backgroundColor: Colors.richBlack,
-    width: 80,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    paddingVertical: 5,
-  },
-  category: {
-    color: 'white',
-    ...Fonts.normal,
-    fontWeight: 'bold',
-    fontSize: 10,
   },
 });
 

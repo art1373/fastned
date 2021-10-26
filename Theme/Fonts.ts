@@ -22,6 +22,10 @@ export default StyleSheet.create({
   h3: {
     fontSize: size.h3,
   },
+  h3bold: {
+    fontSize: size.h3,
+    fontFamily: 'Poppins-SemiBold',
+  },
   h4: {
     fontSize: size.h4,
   },
@@ -36,6 +40,10 @@ export default StyleSheet.create({
   normal: {
     fontSize: size.regular,
     fontFamily: 'Poppins-Light',
+  },
+  normalBold: {
+    fontSize: size.regular,
+    fontFamily: 'Poppins-Medium',
   },
   medium: {
     fontSize: size.medium,

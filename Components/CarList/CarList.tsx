@@ -3,6 +3,7 @@ import * as React from 'react';
 import {StyleSheet, ActivityIndicator} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {Veichle} from '../../Stores/Veichles/types';
+import {Colors} from '../../Theme';
 import {HomeRoutes} from '../../utils/constants';
 import CardCard from '../CardCard/CardCard';
 
@@ -40,7 +41,11 @@ const CarList = ({veichles}: Props) => {
       {veichles.length ? (
         <FlatList data={veichles} renderItem={renderItem} />
       ) : (
-        <ActivityIndicator size={40} style={styles.loading} />
+        <ActivityIndicator
+          size={40}
+          style={styles.loading}
+          color={Colors.primary}
+        />
       )}
     </>
   );
