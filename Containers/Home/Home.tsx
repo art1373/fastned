@@ -2,11 +2,11 @@ import * as React from 'react';
 import * as Redux from 'react-redux';
 import {Container, CarList} from '../../Components';
 import {fetchVeichles} from '../../Stores/Veichles/actions';
-import {getVeichlesSelector} from '../../Stores/Veichles/selectors';
+import {getFilteredVeichles} from '../../Stores/Veichles/selectors';
 
 const Home = () => {
   const dispatch = Redux.useDispatch();
-  const veichles = Redux.useSelector(getVeichlesSelector);
+  const veichles = Redux.useSelector(getFilteredVeichles);
 
   React.useEffect(() => {
     dispatch(fetchVeichles());
@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <Container>
-      <CarList veichles={veichles} />
+      <CarList veichles={veichles!} />
     </Container>
   );
 };
