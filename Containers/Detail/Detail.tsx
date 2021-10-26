@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as Redux from 'react-redux';
-import {View} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {View} from 'react-native-animatable';
 import {getSelectedCar} from '../../Stores/Veichles/selectors';
 import {useRoute} from '@react-navigation/core';
 import {CarInfo, Container} from '../../Components';
@@ -17,11 +18,13 @@ const Detail = () => {
 
   return (
     <Container>
-      <FastImage
-        source={{uri: veichle?.imageUrl, priority: FastImage.priority.high}}
-        style={{width: screen.width, minHeight: 200}}
-      />
-      <View style={{marginTop: 55}}>
+      <View animation="slideInLeft">
+        <FastImage
+          source={{uri: veichle?.imageUrl, priority: FastImage.priority.high}}
+          style={styles.image}
+        />
+      </View>
+      <View animation="fadeInUp" delay={1000} style={styles.infoView}>
         <CarInfo
           brand={veichle?.brand}
           model={veichle?.model}
@@ -35,5 +38,13 @@ const Detail = () => {
     </Container>
   );
 };
-
+const styles = StyleSheet.create({
+  image: {
+    width: screen.width,
+    minHeight: 200,
+  },
+  infoView: {
+    marginTop: 55,
+  },
+});
 export default Detail;

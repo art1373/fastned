@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, TouchableOpacity, StyleSheet} from 'react-native';
+import {TouchableOpacity, StyleSheet} from 'react-native';
+import {View} from 'react-native-animatable';
 import Image from 'react-native-fast-image';
 import {Helpers} from '../../Theme';
 import CarCategory from '../CarCategory/CarCategory';
@@ -16,7 +17,7 @@ type Props = {
 const CardCard = ({category, brand, model, image, onPress, version}: Props) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={styles.container}>
+      <View animation="fadeInUp" style={styles.container}>
         <View style={[Helpers.rowCenter]}>
           <Image
             style={styles.image}
