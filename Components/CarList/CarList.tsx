@@ -1,5 +1,5 @@
-import {useNavigation} from '@react-navigation/core';
 import * as React from 'react';
+import {useNavigation} from '@react-navigation/core';
 import {StyleSheet, ActivityIndicator} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {Veichle} from '../../Stores/Veichles/types';
@@ -14,9 +14,9 @@ const CarList = ({veichles}: Props) => {
   const navigation = useNavigation();
 
   const handleCarPressed = React.useCallback(
-    (cardId: number) =>
+    (carId: number) =>
       navigation.navigate(HomeRoutes.DETAIL, {
-        cardId,
+        carId,
       }),
     [navigation],
   );

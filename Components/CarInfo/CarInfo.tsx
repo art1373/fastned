@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Linking} from 'react-native';
 import {showMessage} from 'react-native-flash-message';
 import {Fonts, Colors, Helpers} from '../../Theme';
-import {screen} from '../../utils/metrics';
+import {metrics, screen} from '../../utils/metrics';
 
 type Props = {
   brand?: string;
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     ...Helpers.rowCenter,
-    ...Helpers.fullMarginTop,
+    marginVertical: metrics.isAndroid ? '70%' : '100%',
     alignSelf: 'center',
     width: screen.width / 1.1,
     backgroundColor: Colors.richBlack,
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   btnText: {
     ...Fonts.h3bold,
     color: '#fff',
+    textTransform: 'uppercase',
   },
 });
 export default CarInfo;

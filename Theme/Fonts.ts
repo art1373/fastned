@@ -42,7 +42,7 @@ export default StyleSheet.create({
     fontFamily: 'Poppins-Light',
   },
   normalBold: {
-    fontSize: size.regular,
+    fontSize: size.regular * 1.1,
     fontFamily: 'Poppins-Medium',
   },
   medium: {

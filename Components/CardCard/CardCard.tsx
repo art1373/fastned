@@ -16,19 +16,21 @@ type Props = {
 };
 const CardCard = ({category, brand, model, image, onPress, version}: Props) => {
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View animation="fadeInUp" style={styles.container}>
-        <View style={[Helpers.rowCenter]}>
-          <Image
-            style={styles.image}
-            source={{uri: image, priority: Image.priority.high}}
-            resizeMode="contain"
-          />
-          <CarInfo brand={brand} model={model} version={version} />
+    <>
+      <TouchableOpacity onPress={onPress}>
+        <View animation="fadeInUp" style={styles.container}>
+          <View style={[Helpers.rowCenter]}>
+            <Image
+              style={styles.image}
+              source={{uri: image, priority: Image.priority.high}}
+              resizeMode="contain"
+            />
+            <CarInfo brand={brand} model={model} version={version} />
+          </View>
+          <CarCategory category={category} />
         </View>
-        <CarCategory category={category} />
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </>
   );
 };
 
