@@ -14,4 +14,5 @@ export default {
   success: '#28a745',
   error: '#dc3545',
   blueMild: '#c6dae6',
+  richBlack: '#010B13',
 };
