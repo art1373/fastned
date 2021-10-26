@@ -20,7 +20,6 @@ export const getFilteredVeichles = createSelector(
     if (!searchText && !searchCategory) {
       return veichles;
     }
-    console.log({searchText, searchCategory});
 
     if (searchText) {
       const filtered = veichles.filter(
