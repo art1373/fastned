@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
   veichle: veichlesReducer,
   search: searchReducer,
 });
-// lets cache images
+// lets cache veichles
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 function* allSagas() {
