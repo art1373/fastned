@@ -25,11 +25,17 @@ export default StyleSheet.create({
   h4: {
     fontSize: size.h4,
   },
+  h4Bold: {
+    fontSize: size.h4,
+    fontFamily: 'Poppins-SemiBold',
+  },
   input: {
     fontSize: size.input,
+    fontFamily: 'Poppins-Medium',
   },
   normal: {
     fontSize: size.regular,
+    fontFamily: 'Poppins-Light',
   },
   medium: {
     fontSize: size.medium,
