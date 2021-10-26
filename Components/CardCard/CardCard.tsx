@@ -62,13 +62,16 @@ const styles = StyleSheet.create({
     bottom: 10,
     backgroundColor: Colors.richBlack,
     width: 80,
-    height: 25,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+    paddingVertical: 5,
   },
   category: {
     color: 'white',
+    ...Fonts.normal,
+    fontWeight: 'bold',
+    fontSize: 10,
   },
 });
 
