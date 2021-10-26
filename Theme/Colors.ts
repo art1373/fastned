@@ -10,7 +10,7 @@ export default {
   white: '#ffffff',
   text: '#212529',
   primary: '#01509f',
-  secondary: '#ffdd00',
+  secondary: '#ffdd30',
   success: '#28a745',
   error: '#dc3545',
   blueMild: '#c6dae6',
