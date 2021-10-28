@@ -21,16 +21,27 @@ export const getFilteredVeichles = createSelector(
       return veichles;
     }
 
-    if (searchText) {
+    if (searchText && !searchCategory) {
       const filtered = veichles.filter(
         v => v.category.toLowerCase() === searchText.toLowerCase(),
       );
       return filtered?.length ? filtered : veichles;
     }
-    if (searchCategory) {
+
+    if (searchCategory && !searchText) {
       const filtered = veichles.filter(
         v =>
           v.brand.toLowerCase().includes(searchCategory.toLowerCase()) ||
+          v.model.toLowerCase().includes(searchCategory.toLowerCase()),
+      );
+      return filtered?.length ? filtered : veichles;
+    }
+
+    if (searchCategory && searchText) {
+      const filtered = veichles.filter(
+        v =>
+          (v.category.toLowerCase() === searchText.toLowerCase() &&
+            v.brand.toLowerCase().includes(searchCategory.toLowerCase())) ||
           v.model.toLowerCase().includes(searchCategory.toLowerCase()),
       );
       return filtered?.length ? filtered : veichles;

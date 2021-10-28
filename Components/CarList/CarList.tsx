@@ -7,7 +7,7 @@ import {Veichle} from '../../Stores/Veichles/types';
 import {Colors, Helpers} from '../../Theme';
 import {HomeRoutes} from '../../utils/constants';
 import CardCard from '../CardCard/CardCard';
-import RNPickerSelect from 'react-native-picker-select';
+import {Picker as RNPickerSelect} from '@react-native-community/picker';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {getSearchCategory, getSearchText} from '../../Stores/Search/selectors';
 import {setSearchCategory, setSearchText} from '../../Stores/Search/actions';
@@ -51,6 +51,7 @@ const CarList = ({veichles}: Props) => {
           <View style={[Helpers.row, Helpers.mainSpaceAround]}>
             <View style={styles.input}>
               <TextInput
+                testID="search-input"
                 defaultValue={searchText}
                 onChangeText={value => dispatch(setSearchText(value))}
               />
@@ -62,15 +63,16 @@ const CarList = ({veichles}: Props) => {
               />
             </View>
             <RNPickerSelect
-              value={searchCategory}
-              onValueChange={value => dispatch(setSearchCategory(value))}
-              items={[
-                {label: 'Car', value: 'Car'},
-                {label: 'Van', value: 'Van'},
-                {label: 'Motorcycle', value: 'Motorcycle'},
-              ]}
-              style={pickerStyles}
-            />
+              selectedValue={searchCategory}
+              onValueChange={(itemValue: any) =>
+                dispatch(setSearchCategory(itemValue))
+              }
+              style={[Helpers.fill]}>
+              <RNPickerSelect.Item label="All" value="" />
+              <RNPickerSelect.Item label="Car" value="Car" />
+              <RNPickerSelect.Item label="Van" value="Van" />
+              <RNPickerSelect.Item label="Motorcycle" value="Motorcycle" />
+            </RNPickerSelect>
           </View>
           <FlatList data={veichles} renderItem={renderItem} />
         </>
@@ -105,28 +107,5 @@ const styles = StyleSheet.create({
     top: 8,
   },
 });
-
-const pickerStyles = {
-  inputIOS: {
-    fontSize: 16,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-    borderWidth: 1,
-    borderColor: 'gray',
-    borderRadius: 4,
-    color: Colors.richBlack,
-    paddingRight: 30, // to ensure the text is never behind the icon
-  },
-  inputAndroid: {
-    fontSize: 16,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    borderWidth: 0.5,
-    borderColor: 'purple',
-    borderRadius: 8,
-    color: 'black',
-    paddingRight: 30, // to ensure the text is never behind the icon
-  },
-};
 
 export default CarList;
