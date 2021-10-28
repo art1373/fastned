@@ -37,7 +37,9 @@ const CarInfo = ({
 
   return (
     <View style={styles.infoWrap}>
-      <Text style={styles.brand}>{brand}</Text>
+      <Text testID="brand" style={styles.brand}>
+        {brand}
+      </Text>
       <Text numberOfLines={2} style={styles.modelVer}>
         model: {model}
       </Text>

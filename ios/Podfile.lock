@@ -352,7 +352,7 @@ PODS:
     - React-Core
   - RNCMaskedView (0.1.11):
     - React
-  - RNCPicker (2.1.0):
+  - RNCPicker (1.8.1):
     - React-Core
   - RNFastImage (8.5.11):
     - React-Core
@@ -432,7 +432,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
-  - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
+  - "RNCPicker (from `../node_modules/@react-native-community/picker`)"
   - RNFastImage (from `../node_modules/react-native-fast-image`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -526,7 +526,7 @@ EXTERNAL SOURCES:
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
   RNCPicker:
-    :path: "../node_modules/@react-native-picker/picker"
+    :path: "../node_modules/@react-native-community/picker"
   RNFastImage:
     :path: "../node_modules/react-native-fast-image"
   RNGestureHandler:
@@ -587,7 +587,7 @@ SPEC CHECKSUMS:
   ReactCommon: 620442811dc6f707b4bf5e3b27d4f19c12d5a821
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
-  RNCPicker: f7a40b21b915b7a187624d52f52b7bc2f73ea413
+  RNCPicker: 914b557e20b3b8317b084aca9ff4b4edb95f61e4
   RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNReanimated: 514a11da3a2bcc6c3dfd9de32b38e2b9bf101926

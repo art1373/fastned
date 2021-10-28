@@ -4,9 +4,10 @@ import {Helpers} from '../../Theme';
 
 type Props = {
   children: React.ReactNode;
+  testID: string;
 };
-const Container = ({children}: Props) => (
-  <SafeAreaView style={[Helpers.fill]}>
+const Container = ({children, testID}: Props) => (
+  <SafeAreaView style={[Helpers.fill]} testID={testID}>
     <View style={[Helpers.fill]}>{children}</View>
   </SafeAreaView>
 );
